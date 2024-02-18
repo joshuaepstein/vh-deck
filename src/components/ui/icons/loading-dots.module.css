@@ -1,0 +1,79 @@
+.loading {
+    display: inline-flex;
+    align-items: center;
+}
+
+.loadingInverted {
+    display: inline-flex;
+    align-items: center;
+}
+
+.loading .spacer {
+    margin-right: 2px;
+}
+
+.loadingInverted .spacer {
+    margin-right: 2px;
+}
+
+.loading span {
+    animation-name: blink;
+    animation-duration: 1.4s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 1px;
+    background-color: #000;
+}
+
+.loadingInverted span {
+    animation-name: blink;
+    animation-duration: 1.4s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 1px;
+    background-color: #fff;
+}
+
+[class='dark'] .loading span {
+    background-color: #fff;
+}
+
+[class='dark'] .loadingInverted span {
+    background-color: #000;
+}
+
+.loading span:nth-of-type(2) {
+    animation-delay: 0.2s;
+}
+
+.loading span:nth-of-type(3) {
+    animation-delay: 0.4s;
+}
+
+.loadingInverted span:nth-of-type(2) {
+    animation-delay: 0.2s;
+}
+
+.loadingInverted span:nth-of-type(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0.2;
+    }
+    20% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.2;
+    }
+}
