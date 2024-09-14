@@ -3,10 +3,10 @@ import { customAlphabet } from 'nanoid'
 import { Metadata } from 'next/types'
 
 export function constructMetadata({
-    title = 'Quizzon - Quiz System',
-    description = 'Quizzon is a quiz system that allows you to create and setup teams to play.',
+    title = 'Report Generator',
+    description = 'Generate rehearsal and show reports for your productions.',
     //   image = "https://localhost:3000/images/thumbnail.png",
-    image = 'https://quizzon.uk/images/thumbnail.png',
+    image = 'https://report-gen.jfstech.uk/thumbnail.png',
     icons = '/favicon.ico',
     noIndex = false,
 }: {

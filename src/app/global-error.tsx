@@ -13,18 +13,16 @@ export default function GlobalError({
 }) {
     return (
         <>
-            <MaxWidthWrapper className="items-center justify-between">
-                <Logo className="h-8" />
+            <MaxWidthWrapper className="flex h-dvh items-center justify-center">
                 <div className="flex flex-col items-center">
-                    <h1 className="mt-5 text-5xl font-medium text-primary-700">
+                    <h1 className="text-primary-700 mt-5 text-5xl font-medium">
                         Something went wrong!
                     </h1>
-                    <p className="mt-2 text-primary-950/50">{error.message}</p>
+                    <p className="text-primary-950/50 mt-2">{error.message}</p>
                     <Button variant="primary" className="mt-8" onClick={() => reset()}>
                         Try again
                     </Button>
                 </div>
-                <div />
             </MaxWidthWrapper>
         </>
     )

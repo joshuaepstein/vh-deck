@@ -33,7 +33,22 @@ const config = {
                     ...defaultTheme.fontFamily.sans,
                 ],
             },
-            colors: {},
+            colors: {
+                primary: {
+                    DEFAULT: '#1291E0',
+                    50: '#F1F9FE',
+                    100: '#D7EEFC',
+                    200: '#A3D7F8',
+                    300: '#6FC1F3',
+                    400: '#3BAAEF',
+                    500: '#1291E0',
+                    600: '#0E72B1',
+                    700: '#0A5482',
+                    800: '#073552',
+                    900: '#031723',
+                    950: '#01070C',
+                },
+            },
             keyframes: {
                 'accordion-down': {
                     from: { height: '0' },

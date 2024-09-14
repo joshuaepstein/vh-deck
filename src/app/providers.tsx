@@ -1,12 +1,5 @@
-import { SessionProvider } from 'next-auth/react'
+import { TooltipProvider } from '@/components/ui/tooltip'
 
 export default function Providers({ children, ...props }: { children: React.ReactNode }) {
-    return (
-        <>
-            <>
-                {/* @ts-ignore */}
-                <SessionProvider session={props.session}>{children}</SessionProvider>
-            </>
-        </>
-    )
+    return <TooltipProvider>{children}</TooltipProvider>
 }
