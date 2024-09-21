@@ -3,13 +3,7 @@ import defaultTheme from 'tailwindcss/defaultTheme'
 
 const config = {
     darkMode: ['class'],
-    content: [
-        './pages/**/*.{ts,tsx}',
-        './components/**/*.{ts,tsx}',
-        './app/**/*.{ts,tsx}',
-        './src/**/*.{ts,tsx}',
-    ],
-    prefix: '',
+    content: ['./src/**/*.{ts,tsx}'],
     theme: {
         container: {
             center: true,
@@ -32,22 +26,7 @@ const config = {
                     'sans-serif',
                     ...defaultTheme.fontFamily.sans,
                 ],
-            },
-            colors: {
-                primary: {
-                    DEFAULT: '#1291E0',
-                    50: '#F1F9FE',
-                    100: '#D7EEFC',
-                    200: '#A3D7F8',
-                    300: '#6FC1F3',
-                    400: '#3BAAEF',
-                    500: '#1291E0',
-                    600: '#0E72B1',
-                    700: '#0A5482',
-                    800: '#073552',
-                    900: '#031723',
-                    950: '#01070C',
-                },
+                display: ['var(--font-rajdhani)', 'var(--font-sans)'],
             },
             keyframes: {
                 'accordion-down': {

@@ -3,10 +3,9 @@ import { customAlphabet } from 'nanoid'
 import { Metadata } from 'next/types'
 
 export function constructMetadata({
-    title = 'Report Generator',
-    description = 'Generate rehearsal and show reports for your productions.',
-    //   image = "https://localhost:3000/images/thumbnail.png",
-    image = 'https://report-gen.jfstech.uk/thumbnail.png',
+    title = 'VH Deck',
+    description = 'View your vault hunters deck and share it with others',
+    image = 'https://vh-deck.joshepstein.co.uk/images/thumbnail.png',
     icons = '/favicon.ico',
     noIndex = false,
 }: {
@@ -28,7 +27,7 @@ export function constructMetadata({
                 },
             ],
         },
-        metadataBase: new URL('https://quizzon.org'),
+        metadataBase: new URL('https://vh-deck.joshepstein.co.uk'),
         // themeColor: '#11C7B8',
         twitter: {
             card: 'summary_large_image',

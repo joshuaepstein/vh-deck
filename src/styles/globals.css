@@ -3,5 +3,14 @@
 @tailwind utilities;
 
 * {
-    @apply font-default;
+    @apply font-display;
+}
+
+.bg-iconframe {
+    background-image: url(/icon-frame.png);
+    transition: background-image 0.3s ease-in-out;
+}
+
+.bg-iconframe:hover {
+    background-image: url(/icon-frame-hovered.png);
 }

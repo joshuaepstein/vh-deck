@@ -1,0 +1,195 @@
+{
+    "starter": {
+        "model": "the_vault:deck/starter_deck#inventory",
+        "name": "Starter",
+        "layout": [
+            {
+                "value": [
+                    "OOO",
+                    "OOO",
+                    "OOO"
+                ],
+                "weight": 1.0
+            }
+        ]
+    },
+    "large": {
+        "model": "the_vault:deck/large#inventory",
+        "name": "Large Deck",
+        "layout": [
+            {
+                "value": [
+                    "OOOOO",
+                    "OOXOO",
+                    "OOOOO"
+                ],
+                "weight": 1.0
+            }
+        ]
+    },
+    "double": {
+        "model": "the_vault:deck/double#inventory",
+        "name": "Double Deck",
+        "layout": [
+            {
+                "value": [
+                    "OOXXXOO",
+                    "OOXOXOO",
+                    "OOXXXOO"
+                ],
+                "weight": 1.0
+            }
+        ]
+    },
+    "merchant": {
+        "model": "the_vault:deck/merchant#inventory",
+        "name": "Merchant's Deck",
+        "layout": [
+            {
+                "value": [
+                    "XXOOXX",
+                    "XOOOOX",
+                    "OOOOOO",
+                    "XOOOOX",
+                    "XXOOXX"
+                ],
+                "weight": 1.0
+            }
+        ]
+    },
+    "expanded": {
+        "model": "the_vault:deck/starter_deck#inventory",
+        "name": "Expanded Deck",
+        "layout": [
+            {
+                "value": [
+                    "OOOO",
+                    "OOOO",
+                    "OOOO",
+                    "OOOO"
+                ],
+                "weight": 1.0
+            }
+        ]
+    },
+    "gdungeon": {
+        "model": "the_vault:deck/starter_deck#inventory",
+        "name": "The Edge Deck",
+        "layout": [
+            {
+                "value": [
+                    "XOXOXOX",
+                    "OOOOOOO",
+                    "OOOOOOO",
+                    "XOXOXOX"
+                ],
+                "weight": 1.0
+            }
+        ]
+    },
+    "ldungeon": {
+        "model": "the_vault:deck/starter_deck#inventory",
+        "name": "The Shroom Deck",
+        "layout": [
+            {
+                "value": [
+                    "OOOOOOO",
+                    "OOOOOOO",
+                    "XXOOOXX",
+                    "XXOOOXX"
+                ],
+                "weight": 1.0
+            }
+        ]
+    },
+    "odungeon": {
+        "model": "the_vault:deck/starter_deck#inventory",
+        "name": "The Anvil Deck",
+        "layout": [
+            {
+                "value": [
+                    "OOOOOOO",
+                    "XOOOOOX",
+                    "XXOOOXX",
+                    "XOOOOOX"
+                ],
+                "weight": 1.0
+            }
+        ]
+    },
+    "treasure": {
+        "model": "the_vault:deck/treasure#inventory",
+        "name": "The Treasure Deck",
+        "layout": [
+            {
+                "value": [
+                    "OOOOOOO",
+                    "OOOOOOO",
+                    "OOOOOOO",
+                    "OOXXXOO"
+                ],
+                "weight": 1.0
+            }
+        ]
+    },
+    "black": {
+        "model": "the_vault:deck/black#inventory",
+        "name": "The Black Deck",
+        "layout": [
+            {
+                "value": [
+                    "OXOOOOOXO",
+                    "OXOOOOOXO",
+                    "OXOOOOOXO"
+                ],
+                "weight": 1.0
+            }
+        ]
+    },
+    "lost": {
+        "model": "the_vault:deck/lost#inventory",
+        "name": "The Lost Deck",
+        "layout": [
+            {
+                "value": [
+                    "OOOOOOXOO",
+                    "OOOOOOXXO",
+                    "OOXOOOOOX"
+                ],
+                "weight": 1.0
+            }
+        ]
+    },
+    "champion": {
+        "model": "the_vault:deck/champion#inventory",
+        "name": "The Champion Deck",
+        "layout": [
+            {
+                "value": [
+                    "OOOO",
+                    "OOOO",
+                    "OOOO",
+                    "OOOO",
+                    "XOOX"
+                ],
+                "weight": 1.0
+            }
+        ]
+    },
+    "extended": {
+        "model": "the_vault:deck/champion#inventory",
+        "name": "The Champion Deck",
+        "layout": [
+            {
+                "value": [
+                    "X",
+                    "X",
+                    "X",
+                    "XOOO",
+                    "XOOX"
+                ],
+                "weight": 1.0
+            }
+        ]
+    }
+}

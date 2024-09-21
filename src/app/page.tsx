@@ -1,67 +1,42 @@
+// import DeckIconDisplay from '@/components/deck-icon-display'
+import DeckRenderer from '@/components/deck-renderer'
+// import ItemDisplay from '@/components/item-display'
+import SelectDeck from '@/components/SelectDeck'
 import MaxWidthWrapper from '@/components/shared/max-width-wrapper'
 import { Button } from '@/components/ui/button'
+import { Dialog, DialogContent, DialogHeader, DialogTrigger } from '@/components/ui/dialog'
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
-import prisma from '@/lib/prisma'
+import decksConfig from '@/config/decks.json'
+import { getDecks, getTexture, isDeck } from '@/types/deck'
+import * as TooltipPrimitive from '@radix-ui/react-tooltip'
+import Image from 'next/image'
 import Link from 'next/link'
+import { notFound, redirect } from 'next/navigation'
+import treasureDeck from '~/deck/treasure.png'
+import { RedirectWithCards } from './redirectWithCards'
 
-async function getShows() {
-    'use server'
-    return await prisma.show.findMany({
-        select: {
-            productionName: true,
-            // reports: true,
-            _count: {
-                select: {
-                    reports: true,
-                },
-            },
-            createdAt: true,
-            id: true,
-            director: true,
-        },
-    })
-}
+export default async function HomePage({ searchParams: { selectedDeck, cards } }) {
+    const decks = getDecks()
+    if (!selectedDeck && !cards) {
+        // we want to redirect to the starter deck
+        redirect('/?selectedDeck=starter')
+    } else if (!selectedDeck && cards) {
+        // TODO: We need to redirect the user but make sure that we keep the cards.
+        return <RedirectWithCards />
+    }
+    const selectedDeckType = selectedDeck && isDeck(selectedDeck) ? decks[selectedDeck] : null
 
-export default async function HomePage() {
-    const shows = await getShows()
+    if (!selectedDeckType) notFound()
 
     return (
         <>
-            <MaxWidthWrapper>
-                <div className="mt-16 flex w-full flex-row items-center justify-between">
-                    <h1 className="text-3xl font-medium text-zinc-700">Shows</h1>
-                    <Button variant="default" asChild>
-                        <Link href="/new-show">New Show</Link>
-                    </Button>
+            <MaxWidthWrapper className="mt-16">
+                <div className="flex flex-row items-center justify-between">
+                    <SelectDeck selectedDeck={selectedDeck} selectedDeckType={selectedDeckType} />
+                    <p className="text-2xl font-bold text-[#ffa800]">{selectedDeckType.name}</p>
                 </div>
-                <ul className="mt-8 flex flex-col gap-4">
-                    {shows.map((show) => (
-                        <li key={show.id}>
-                            <Link
-                                className="-mx-4 flex flex-row items-center justify-between rounded-lg bg-zinc-100 px-4 py-2 transition hover:bg-zinc-50"
-                                href={`/show/${show.id}`}
-                            >
-                                <Tooltip>
-                                    <TooltipTrigger>
-                                        <p className="font-medium">{show.productionName}</p>
-                                    </TooltipTrigger>
-                                    <TooltipContent>
-                                        {show.director && (
-                                            <p className="text-sm font-medium">
-                                                Director: {show.director}
-                                            </p>
-                                        )}
-                                        <p className="text-sm">
-                                            Created: {show.createdAt.toLocaleString()}
-                                        </p>
-                                        <p className="text-sm">Reports: {show._count.reports}</p>
-                                    </TooltipContent>
-                                </Tooltip>
-                                <p className="font-semibold text-blue-800">{show._count.reports}</p>
-                            </Link>
-                        </li>
-                    ))}
-                </ul>
+
+                <DeckRenderer deck={selectedDeckType} />
             </MaxWidthWrapper>
         </>
     )
