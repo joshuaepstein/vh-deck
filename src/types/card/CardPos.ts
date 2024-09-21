@@ -4,7 +4,7 @@ interface JsonObject {
     [key: string]: any
 }
 
-class CardPos {
+export class CardPos {
     public x: number
     public y: number
 

@@ -7,6 +7,8 @@ export enum CardType {
     'Wild',
 }
 
+export const CardTypes = ['Arcane', 'Temporal', 'Resource', 'Evolution', 'Stat', 'Wild']
+
 export enum CardColor {
     GREEN = 5635925,
     BLUE = 5636095,
@@ -16,14 +18,37 @@ export enum CardColor {
 
 export interface Card {
     tier: number
-    entries: ICardEntry[]
+    entries: Entry[]
 }
 
-export interface ICardEntry {
-    name: string
-    colors: CardColor[]
+export interface Entry {
+    name: Name
     groups: string[]
-    modifiers: JsonElement
-    scaler: JsonElement
-    condition: JsonElement
+    model: string
+    colors: CardColor[]
+    modifier: Modifier
+}
+
+export interface Name {
+    text: string
+}
+
+export interface Modifier {
+    type: string
+    config: {
+        pool: {
+            tier: number
+            config: {
+                min: number
+                max: number
+                step: number
+            }
+        }[]
+        attribute: string
+        maxTier: number
+    }
+    values: {
+        tier: number
+        value: number
+    }[]
 }
