@@ -1,3 +1,3 @@
-# QUIZZON
+# VH Deck
 
-Currently in "DESIGNING" phase.
+More info soon
